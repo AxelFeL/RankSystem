@@ -45,7 +45,7 @@ final class Utils {
 			$time = self::getTimeLeft($expTime);
 			return $time["Days"]." day(s), ".$time["Hours"]." hour(s), ".$time["Minutes"]." minute(s), ".$time["Seconds"]." second(s)";
 		}
-		return "Never";
+		return "§cPermanent";
 	}
 
 	/**
