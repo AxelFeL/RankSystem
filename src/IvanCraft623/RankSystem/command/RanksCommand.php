@@ -37,7 +37,7 @@ class RanksCommand extends PluginCommand {
 		parent::__construct('ranksystem', $plugin);
 		$this->plugin = $plugin;
 		$this->setAliases(["ranks"]);
-		$this->setDescription('A Ranks/Perms manager by IvanCraft623.');
+		$this->setDescription('A Simple Ranks/Perms manager');
 	}
 
 	public function execute(CommandSender $sender, string $label, array $args) {
@@ -155,7 +155,7 @@ class RanksCommand extends PluginCommand {
 					}
 					$rank = $this->plugin->getRankManager()->getByName($args[2]);
 					if (!isset($args[3])) {
-						$expTime = "Never";
+						$expTime = "§cPermanent";
 						$session->setRank($rank);
 					} elseif (($expTime = Utils::parseDuration($args[3])) !== null) {
 						$session->setRank($rank, $expTime);
@@ -172,7 +172,7 @@ class RanksCommand extends PluginCommand {
 						"§a---- §6You have given Rank! §a----"."\n"."\n".
 						"§ePlayer:§b {$args[1]}"."\n".
 						"§eRank:§b {$args[2]}"."\n".
-						"§eExpire In:§b ".Utils::getExpIn($expTime)
+						"§eExpire:§b ".Utils::getExpIn($expTime)
 					);
 				break;
 
